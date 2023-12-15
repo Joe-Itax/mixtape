@@ -1,13 +1,20 @@
-import mixtapeContext from '../context/mixtapeContext';
-import { useState } from 'react';
-import { useContext } from 'react';
+import mixtapeContext from "../context/mixtapeContext";
+import { useState } from "react";
 
-function MixtapeProvider({ children, songs }) {
-  const [genre, setGenre] = useState('all');
-  const [sortOrder, setSortOrder] = useState('ascending');
+// genre,
+// setGenre,
+// sortOrder,
+// setSortOrder,
+function MixtapeProvider({ children, genre, songs, sortOrder }) {
+  // [genre, setGenre] = useState("all");
+  // [sortOrder, setSortOrder] = useState("ascending");
   return (
     <mixtapeContext.Provider
-      value={{ songs, genre: genre, sortOrder: sortOrder }}
+      value={{
+        songs: songs,
+        genre: genre,
+        sortOrder: sortOrder,
+      }}
     >
       {children}
     </mixtapeContext.Provider>

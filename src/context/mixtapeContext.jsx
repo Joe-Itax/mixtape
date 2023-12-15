@@ -1,8 +1,9 @@
 import { createContext } from 'react';
 
 const mixtapeContext = createContext({
-  genre: 'all',
-  sortOrder: 'ascending',
+  songs: null, 
+  genre: "all",
+  sortOrder: "ascending",
 });
 
 export default mixtapeContext;

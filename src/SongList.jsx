@@ -1,8 +1,12 @@
-import React from 'react';
-import { Song } from './Song';
+import React from "react";
+import { useContext } from "react";
+import { Song } from "./Song";
+import mixtapeContext from "./context/mixtapeContext";
 
-export const SongList = ({ songs }) => {
+export const SongList = () => {
   // Your code here! ✨
+  const mix = useContext(mixtapeContext);
+  const songs = mix.songs;
   return (
     <>
       <h2>TODO: Update taste in music...?</h2>
