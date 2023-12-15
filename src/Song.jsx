@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const Song = ({ artist, genre, name, year }) => {
   return (
