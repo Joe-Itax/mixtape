@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MixtapeProvider from "./components/MixtapeProvider";
 import { SongList } from "./SongList";
 import Controls from "./Controls";
@@ -36,13 +36,21 @@ const songs = [
 ];
 
 function App() {
+  const [genre, setGenre] = useState("all");
+  const [sortOrder, setSortOrder] = useState("ascending");
+
   return (
-    <MixtapeProvider songs={songs} genre="all" sortOrder="ascending">
+    <MixtapeProvider songs={songs} genre={genre} sortOrder={sortOrder}>
       <div className="app">
-        <h1 className="heading">My 🔥 Mixtape</h1>
-        TODO: make some music...? 🎶
+        <h1 className="heading">My 🔥 Mixtape 🎶</h1>
+        {/* TODO: make some music...? 🎶 */}
       </div>
-      <Controls />
+      <Controls
+        onSetChange={(selections) => {
+          setGenre(selections.genre);
+          setSortOrder(selections.sortOrder);
+        }}
+      />
       <SongList songs={songs} />
     </MixtapeProvider>
   );
